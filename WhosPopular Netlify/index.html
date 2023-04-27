@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Who's Popular</title>
+        <link rel="stylesheet" type="text/css" href="index.css" />
+        <script src="index.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    </head>
+    <body class="bg-primary-subtle">
+        <a href="contact.html">
+            <div id="conme">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+            </div>
+        </a>
+        <div id="score">Score : <span id="updateit">0</span></div>
+        <!-- <center>
+        <video autoplay muted loop id="myVideo" style="z-index:-1">
+            <source src="bg.mp4" type="video/mp4">
+        </video></center>
+ -->
+        <h1 class="display-4 text-primary" id="head">WHO'S POPULAR</h1>
+        <div id="intro">
+            The rules are simple.<br />
+            You are shown 2 programming languages among two of them you have to predict the most popular one.<br />
+            A bonus will be added to the score if you answer every question before 25 seconds.<br />
+            For your comfort we have added the wikipedia link to all of them .<br />
+            Feel free to take help and be victorious.<br />
+            Good Luck .
+        </div>
+        <div id="outro">
+            <h3 id="finished">Game Over</h3>
+            Congratulations you scored <span id="changeit"></span>.<br />
+            Your score is better than <span id="perc"></span> %.<br />
+            The popularity is of each language is taken from <a href="https://www.tiobe.com/tiobe-index/" target="_blank" style="color: darkblue; font-weight: 400;">TIOBE</a>. <br />
+            Enter your name to save your score in our ranklist.<br />
+            <form  >
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name" autocomplete="off" />
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-danger mb-3">submit score</button>
+                </div>
+            </form>
+        </div>
+        <br />
+        <br />
+        <div class="p-5">
+            <div class="row g-2">
+                <div class="col-sm-1"></div>
+
+                <div class="col-sm-5" id="but0">
+                    <div class="card bg-danger-subtle car">
+                        <div class="card-body">
+                            <p></p>
+                            <h3 class="card-title text-center"><a href="https://en.wikipedia.org/wiki/Python_%28programming_language%29" target="_blank">Python</a></h3>
+                            <p class="card-text">
+                                Designed by: Guido van Rossum<br />
+                                First appeared: 20 February 1991; <br />
+                                32 years ago
+                            </p>
+                            <a href="#" onclick="sel('but0')" class="btn btn-primary">Select</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-5" id="but1">
+                    <div class="card bg-danger-subtle car">
+                        <div class="card-body">
+                            <p></p>
+                            <h3 class="card-title text-center"><a href="https://en.wikipedia.org/wiki/C_(programming_language)" target="_blank">C</a></h3>
+                            <p class="card-text">
+                                Designed by: Dennis Ritchie<br />
+                                First appeared 1972; <br />
+                                51 years ago
+                            </p>
+                            <a href="#" onclick="sel('but1')" class="btn btn-primary">Select</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-5" id="but2">
+                    <div class="card bg-danger-subtle car">
+                        <div class="card-body">
+                            <p></p>
+                            <h3 class="card-title text-center"><a href="https://en.wikipedia.org/wiki/Java_(programming_language)" target="_blank">Java</a></h3>
+                            <p class="card-text">
+                                Designed by: James Gosling<br />
+                                First appeared: May 23, 1995; <br />
+                                27 years ago
+                            </p>
+                            <a href="#" onclick="sel('but2')" class="btn btn-primary">Select</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-5" id="but3">
+                    <div class="card bg-danger-subtle car">
+                        <div class="card-body">
+                            <p></p>
+                            <h3 class="card-title text-center"><a href="https://en.wikipedia.org/wiki/C%2B%2B" target="_blank"> C++</a></h3>
+                            <p class="card-text">
+                                Designed by: Bjarne Stroustrup<br />
+                                First appeared 1985; <br />
+                                38 years ago
+                            </p>
+                            <a href="#" onclick="sel('but3')" class="btn btn-primary">Select</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-5" id="but4">
+                    <div class="card bg-danger-subtle car">
+                        <div class="card-body">
+                            <p></p>
+                            <h3 class="card-title text-center"><a href="https://en.wikipedia.org/wiki/C_Sharp_(programming_language)" target="_blank"> C#</a></h3>
+                            <p class="card-text">
+                                Designed by: Anders Hejlsberg (MS Corp.)<br />
+                                First appeared: 2000;<br />
+                                23 years ago
+                            </p>
+                            <a href="#" onclick="sel('but4')" class="btn btn-primary">Select</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-5" id="but5">
+                    <div class="card bg-danger-subtle car">
+                        <div class="card-body">
+                            <p></p>
+                            <h3 class="card-title text-center"><a href="https://en.wikipedia.org/wiki/Visual_Basic_(classic)" target="_blank">Visual Basic</a></h3>
+                            <p class="card-text">
+                                Developer: Microsoft<br />
+                                First appeared: May 1991;<br />
+                                31 years ago
+                            </p>
+                            <a href="#" onclick="sel('but5')" class="btn btn-primary">Select</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-5" id="but6">
+                    <div class="card bg-danger-subtle car">
+                        <div class="card-body">
+                            <p></p>
+                            <h3 class="card-title text-center"><a href="https://en.wikipedia.org/wiki/JavaScript" target="_blank"> JavaScript</a></h3>
+                            <p class="card-text">
+                                Designed by: Brendan Eich<br />
+                                First appeared: December 4, 1995; 27 years ago
+                            </p>
+                            <a href="#" onclick="sel('but6')" class="btn btn-primary">Select</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-5" id="but7">
+                    <div class="card bg-danger-subtle car">
+                        <div class="card-body">
+                            <p></p>
+                            <h3 class="card-title text-center"><a href="https://en.wikipedia.org/wiki/SQL" target="_blank">SQL</a></h3>
+                            <p class="card-text">
+                                Designed by: Donald D. Chamberlin, Raymond F. Boyce<br />
+                                First appeared: 1974; 49 years ago
+                            </p>
+                            <a href="#" onclick="sel('but7')" class="btn btn-primary">Select</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-5" id="but8">
+                    <div class="card bg-danger-subtle car">
+                        <div class="card-body">
+                            <p></p>
+                            <h3 class="card-title text-center"><a href="https://en.wikipedia.org/wiki/PHP" target="_blank"> PHP</a></h3>
+                            <p class="card-text">
+                                Designed by: Rasmus Lerdorf<br />
+                                First appeared: June 8, 1995;<br />
+                                27 years ago
+                            </p>
+                            <a href="#" onclick="sel('but8')" class="btn btn-primary">Select</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-5" id="but9">
+                    <div class="card bg-danger-subtle car">
+                        <div class="card-body">
+                            <p></p>
+                            <h3 class="card-title text-center"><a href="https://en.wikipedia.org/wiki/Go_(programming_language)" target="_blank"> Go</a></h3>
+                            <p class="card-text">
+                                Designed by: Robert Griesemer, Rob Pike, Ken Thompson<br />
+                                First appeared: Nov 10, 2009; 13 years ago
+                            </p>
+                            <a href="#" onclick="sel('but9')" class="btn btn-primary">Select</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-5" id="but10">
+                    <div class="card bg-danger-subtle car">
+                        <div class="card-body">
+                            <p></p>
+                            <h3 class="card-title text-center"><a href="https://en.wikipedia.org/wiki/Assembly_language" target="_blank"> Assembly Language</a></h3>
+                            <p class="card-text">
+                                Extensions: .asm, .s, .inc, .wla, .SRC<br />
+                                First appeared: 1947<br />
+                                76 years ago
+                            </p>
+                            <a href="#" onclick="sel('but10')" class="btn btn-primary">Select</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-5" id="but11">
+                    <div class="card bg-danger-subtle car">
+                        <div class="card-body">
+                            <p></p>
+                            <h3 class="card-title text-center"><a href="https://en.wikipedia.org/wiki/MATLAB" target="_blank"> MATLAB</a></h3>
+                            <p class="card-text">
+                                Designed by: Cleve Moler<br />
+                                First appeared: late 1970s<br />
+                                Developer: MathWorks
+                            </p>
+                            <a href="#" onclick="sel('but11')" class="btn btn-primary">Select</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <center>
+            <button class="btn btn-outline-success btn-lg" onclick="run1()" id="start">
+                Start
+            </button>
+        </center>
+
+        <div>
+            <center>
+                <button class="btn btn-outline-success btn-lg" onclick="window.location.reload(true)" id="restart">
+                    Restart
+                </button>
+            </center>
+        </div>
+        <div class="wrapper">
+            <p><span id="seconds">00</span>:<span id="tens">00</span></p>
+            <button id="button-start">Start</button>
+            <button id="button-stop">Stop</button>
+            <button id="button-reset">Reset</button>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    </body>
+</html>

@@ -1,0 +1,194 @@
+#conme {
+    font-size: 25px;
+    background: white;
+    border: 2px solid blue;
+    border-radius: 10px;
+    padding: 0px 10px 0px 10px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+@media (max-width: 600px) {
+    * {
+        display: none;
+    }
+}
+#intro {
+    padding: 40px;
+    font-size: 20px;
+    font-family: cursive;
+    color: white;
+    text-align: center;
+}
+#outro {
+    padding: 40px;
+    font-size: 20px;
+    display: none;
+    font-family: cursive;
+    color: white;
+    text-align: center;
+}
+#button-start,
+#button-stop,
+#button-reset {
+    visibility: hidden;
+}
+.wrapper {
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    font-size: 20px;
+}
+#restart {
+    display: none;
+}
+#head {
+    text-align: center;
+    padding-top: 5%;
+    font-family: cursive;
+}
+#score {
+    display: block;
+    float: right;
+    position: fixed;
+    color: blue;
+    right: 10px;
+    top: 10px;
+    background: white;
+    padding: 0px 10px 0px 10px;
+    font-size: 20px;
+    border: 2px solid blue;
+    border-radius: 10px;
+    font-family: cursive;
+}
+
+#but {
+    display: block;
+}
+#but0,
+#but1,
+#but2,
+#but3,
+#but4,
+#but5,
+#but6,
+#but7,
+#but8,
+#but9,
+#but10,
+#but11 {
+    display: none;
+}
+#but0:hover,
+#but1:hover,
+#but2:hover,
+#but3:hover,
+#but4:hover,
+#but5:hover,
+#but6:hover,
+#but7hover,
+#but8:hover,
+#but9:hover,
+#but10:hover,
+#but11:hover {
+    animation: oho 4s ease;
+}
+
+@keyframes oho {
+    0% {
+        transform: scale(1, 1);
+    }
+    50% {
+        transform: scale(0.9, 0.9);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
+body {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 25s ease infinite;
+    height: 100vh;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0.8;
+}
+
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+}
+
+.car {
+    background: #191c29;
+    position: relative;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    font-size: 1.5em;
+    color: green;
+    cursor: pointer;
+    font-family: cursive;
+}
+
+.car::before {
+    content: "";
+    width: 104%;
+    height: 102%;
+    border-radius: 8px;
+    background-image: linear-gradient(var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
+    position: absolute;
+    z-index: -1;
+    top: -1%;
+    left: -2%;
+    animation: spin 2.5s linear infinite;
+}
+
+.car::after {
+    position: absolute;
+    content: "";
+    top: calc(var(--car-height) / 6);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc(var(--car-height) / 6));
+    background-image: linear-gradient(var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
+    opacity: 1;
+    transition: opacity 0.5s;
+    animation: spin 2.5s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        --rotate: 0deg;
+    }
+    100% {
+        --rotate: 360deg;
+    }
+}
